@@ -5,63 +5,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body style="text-align: center; margin: 0; font-family: Arial, sans-serif; background-color: #fff5fa; color: #333">
+
+   
+    <h1 style="color: #db2777;font-size: 28px;margin: 30px 0 10px;text-transform: uppercase;">
+        marjorie! </h1>
     
- <h1 class="text-3xl font-bold underline text-red-700">
-      marjorie!</h1>
+    <header style="background-color: #ec4899; padding: 20px 50px;">
 
+        <nav style="display: flex; justify-content: space-between; align-items: center; margin-left: 50px; margin-right: 50px;">
 
-    <button id="switch">Switch</button>
-    <header>
-        <nav>
-            <span>@ohmbebs</span>
-            <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact Me</a></li>
+            <span style="color: white; font-size: 24px;font-weight: bold;">
+                @ohmybebs </span>
+            
+
+            <ul style=" display: flex; gap: 20px; padding: 0; margin: 0; list-style: none;">
+
+                <li>
+                    <a href="#projects" style="color: violet; text-decoration: none; font-weight: bold;">
+                        Projects </a>
+                </li>
+
+                <li>
+                    <a href="#services" style="color: violet; text-decoration: none; font-weight: bold;">
+                        Services </a>
+                </li>
+
+                <li>
+                    <a href="#contact" style="color: violet; text-decoration: none; font-weight: bold;">
+                        Contact Me </a>
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
 
-    <main>
-        <section id="projects"> 
-            <h2 class="projects">My Projects</h2>
-            <p>Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.
+    
+   <main class="mx-auto grid max-w-xl gap-8 px-6 pb-10 md:grid-cols-1 shadow-lg rounded-2xl>"
+
+       
+        <section id="projects" style=" flex: 1; min-width: 300px; background-color: #fbcfe8; border: 2px solid #ec4899; border-radius: 15px; padding: 25px;">
+
+            <h2 class="projects" style="color: #be185d; font-size: 32px; margin-bottom: 15px;">
+                My Projects </h2>
+            
+
+            <p> Personal portfolio, payroll system, company website,
+                startup website, and compliance monitoring system.
+            </p> 
+         </section>
+
+    
+        <section id="services" style="flex: 1; min-width: 300px; background-color: #f9a8d4; border: 2px solid #ec4899; border-radius: 30px; padding: 50px;">
+
+            <h2 class="services" style="color: #9d174d; font-size: 32px; margin-bottom: 15px;">
+                My Services
+            </h2>
+
+            <p>
+                Website Creation, System Creation, AI Automation,
+                Database Management, Project Management, Systems Analyst
             </p>
+
         </section>
 
-        <section id="services">
-            <h2 class="services">My Services</h2>
-            <p>Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems
-                Analyst</p>
+      
+        <section id="contact" style="flex: 1; min-width: 280px; background-color: white; border: 2px solid #ec4899; border-radius: 15px; padding: 25px;">
+
+            <h2 class="contact" style="color: #be185d; font-size: 32px; margin-bottom: 20px;">
+                Let's build together!
+            </h2>
+
+            
+            <form action="#" style="
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                text-align: left; ">
+
+               
+                <label for="name" style="
+                    font-weight: bold;
+                ">
+                    Name
+                </label>
+
+                <input type="text" id="name" name="name" required style=" padding: 12px; border: 1px solid #f472b6; border-radius: 8px; font-size: 16px;">
+
+                
+                <label for="email" style="
+                    font-weight: bold;
+                ">
+                    Email
+                </label>
+
+                <input type="email" name="email" id="email" required style="padding: 12px; border: 1px solid #f472b6; border-radius: 8px; font-size: 16px;">
+
+               
+                <label for="message" style="
+                    font-weight: bold;">
+                    Message
+                </label>
+
+                <textarea name="message" id="message" rows="5" required style=" padding: 12px; border: 1px solid #f472b6; border-radius: 8px; font-size:16px; resize: none"></textarea>
+
+                
+                <button type="submit" style="background-color:#ec4899; color:white; padding:13px 20px; border:none; border-radius:8px; font-size:16px; font-weight:bold; cursor:pointer;">
+                    Send Message
+                </button>
+             </form>
+            
         </section>
 
-        <section id="contact">
-            <h2 class="contact">Let's build together!</h2>
-            <form action="#">
-                <!-- Name -->
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <!-- Email -->
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
-
-                <!-- Message -->
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="5" required></textarea>
-
-                <!-- Submit -->
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
     </main>
 
-    <!-- <script src="script.js"></script> -->
-</body>
+    
+    <footer style="background-color: #ec4899; color: white; padding: 30px; margin-top: 30px;">
+        <p style="margin: 0;">
+            © 2026 Marjorie | My Portfolio
+        </p>
+    </footer>
 
+</body>
 </html>
