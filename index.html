@@ -7,12 +7,12 @@
 
 @layer components {
 .btn-primary {
-@apply px-6 py-3 bg-red-800 text-white hover:bg-orange-400 transition-colors dark:bg-slate-700;
+@apply px-6 py-3 bg-red-800 text-white hover:bg-orange-400 dark:bg-slate-700;
 }
 }
 </style>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, ">
     <title>My Portfolio - Clay Edition</title>
     
     
@@ -27,13 +27,9 @@
             --clay-surface: #FCE7F3;
             --clay-text: #831843;
             
-          
-            --clay-shadow-outer: 20px 20px 40px rgba(190, 24, 93, 0.12), 
-                                 -15px -15px 30px rgba(255, 255, 255, 0.9);
-            --clay-shadow-inner: inset 6px 6px 12px rgba(190, 24, 93, 0.15), 
-                                 inset -6px -6px 12px rgba(255, 255, 255, 0.9);
-            --clay-shadow-btn: 6px 6px 12px rgba(190, 24, 93, 0.25), 
-                               -4px -4px 10px rgba(255, 255, 255, 0.8);
+            --clay-shadow-outer: 20px 20px 40px rgba(190, 24, 93, 0.12);
+            --clay-shadow-inner: inset 6px 6px 12px rgba(190, 24, 93, 0.15);
+            --clay-shadow-btn: 6px 6px 12px rgba(190, 24, 93, 0.25);
         }
 
         html.dark {
@@ -41,10 +37,8 @@
             --clay-surface: #3E2433;
             --clay-text: #FBCFE8;
             --clay-primary: #BE185D;
-            --clay-shadow-outer: 20px 20px 40px rgba(0, 0, 0, 0.4), 
-                                 -10px -10px 20px rgba(255, 255, 255, 0.05);
-            --clay-shadow-inner: inset 6px 6px 12px rgba(0, 0, 0, 0.4), 
-                                 inset -6px -6px 12px rgba(255, 255, 255, 0.05);
+            --clay-shadow-outer: 20px 20px 40px rgba(0, 0, 0, 0.6);
+            --clay-shadow-inner: inset 6px 6px 12px rgba(0, 0, 0, 0.6);
         }
 
         * {
@@ -61,22 +55,19 @@
             line-height: 1.7;
         }
 
-       
-
         .clay-card {
             background: var(--clay-surface);
             border-radius: 35px;
             padding: 40px;
             margin-bottom: 35px;
             box-shadow: var(--clay-shadow-outer);
-            border: 4px solid rgba(255, 255, 255, 0.4);
+            border: none; 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .clay-card:hover {
             transform: translateY(-5px);
-            box-shadow: 25px 25px 50px rgba(190, 24, 93, 0.15), 
-                        -15px -15px 35px rgba(255, 255, 255, 0.95);
+            box-shadow: 25px 25px 50px rgba(190, 24, 93, 0.2);
         }
 
         .clay-btn {
@@ -91,13 +82,15 @@
             text-decoration: none;
             display: inline-block;
             box-shadow: var(--clay-shadow-btn);
-            transition: all 0.2s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s ease, transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        .rotate-btn {
+            transform: rotate(360deg) scale(1.05);
         }
 
         .clay-btn:active {
             box-shadow: var(--clay-shadow-inner);
-            transform: scale(0.98);
         }
 
         .clay-btn-outline {
@@ -112,8 +105,6 @@
             border-color: var(--clay-text);
         }
 
-        
-
         header {
             background: var(--clay-surface);
             padding: 20px 5%;
@@ -121,7 +112,7 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 10px 30px rgba(190, 24, 93, 0.1);
-            border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+            border-bottom: none;
         }
 
         nav {
@@ -136,7 +127,7 @@
             font-size: 28px;
             font-weight: 800;
             color: var(--clay-primary-dark);
-            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+            text-shadow: none;
         }
 
         nav ul {
@@ -158,7 +149,7 @@
         }
 
         nav a:hover {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(190, 24, 93, 0.1);
             box-shadow: var(--clay-shadow-inner);
         }
 
@@ -168,7 +159,6 @@
             margin: 40px auto;
         }
 
-        
         h1, h2, h3 {
             color: var(--clay-primary-dark);
             margin-top: 0;
@@ -177,14 +167,13 @@
         .section-title {
             font-size: 36px;
             margin-bottom: 25px;
-            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.4);
+            text-shadow: none;
         }
 
-        
         #hero {
             text-align: center;
             padding: 80px 30px;
-            background: linear-gradient(135deg, var(--clay-surface), #fff);
+            background: var(--clay-surface);
         }
 
         #hero h1 {
@@ -200,7 +189,6 @@
             margin-top: 35px;
         }
 
-        
         .about-content {
             display: grid;
             grid-template-columns: 160px 1fr;
@@ -217,10 +205,9 @@
             font-weight: 900;
             color: var(--clay-primary);
             box-shadow: var(--clay-shadow-inner);
-            border: 4px solid rgba(255, 255, 255, 0.5);
+            border: none;
         }
 
-        
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -232,12 +219,8 @@
             background: var(--clay-surface);
             border-radius: 30px;
             box-shadow: var(--clay-shadow-outer);
-            border: 4px solid rgba(255, 255, 255, 0.4);
+            border: none;
             transition: 0.3s;
-        }
-
-        .item-card:hover {
-            transform: translateY(-8px) scale(1.02);
         }
 
         .item-icon {
@@ -245,10 +228,9 @@
             font-weight: 900;
             color: var(--clay-primary);
             margin-bottom: 15px;
-            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.6);
+            text-shadow: none;
         }
 
-       
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -277,23 +259,20 @@
 
         .contact-form input:focus,
         .contact-form textarea:focus {
-            box-shadow: inset 4px 4px 8px rgba(190, 24, 93, 0.2), 
-                        inset -4px -4px 8px rgba(255, 255, 255, 0.8),
+            box-shadow: inset 4px 4px 8px rgba(190, 24, 93, 0.2),
                         0 0 0 3px var(--clay-primary);
         }
 
-        
         footer {
             background: var(--clay-surface);
             color: var(--clay-text);
             padding: 40px;
             text-align: center;
-            border-top: 4px solid rgba(255, 255, 255, 0.5);
+            border-top: none;
             box-shadow: 0 -10px 30px rgba(190, 24, 93, 0.1);
             margin-top: 60px;
         }
 
-        
         html.dark body {
             background: var(--clay-bg);
         }
@@ -303,13 +282,13 @@
         html.dark header,
         html.dark footer {
             background: var(--clay-surface);
-            border-color: rgba(255, 255, 255, 0.05);
+            border: none;
         }
 
         html.dark .about-icon {
             background: #2D1B26;
             color: var(--clay-primary);
-            border-color: rgba(255, 255, 255, 0.1);
+            border: none;
         }
 
         html.dark .contact-form input,
@@ -364,12 +343,15 @@
             <button id="toggledark" class="clay-btn" type="button" style="padding: 12px 20px; font-size: 0.9rem;">
                 Toggle Theme
             </button>
+
+            <button id="replayBtn" class="clay-btn clay-btn-outline" type="button" style="padding: 12px 20px; font-size: 0.9rem;">
+                Replay Intro
+            </button>
         </nav>
     </header>
 
     <main>
 
-        
         <section id="hero" class="clay-card">
             <p style="letter-spacing: 2px; font-weight: 700; color: var(--clay-primary);">WELCOME TO MY PORTFOLIO</p>
 
@@ -392,7 +374,6 @@
             </div>
         </section>
 
-        
         <section id="about" class="clay-card">
             <h2 class="section-title">About Me</h2>
 
@@ -413,7 +394,6 @@
             </div>
         </section>
 
-        
         <section id="projects" class="clay-card">
             <h2 class="section-title">My Projects</h2>
 
@@ -449,7 +429,6 @@
             </div>
         </section>
 
-       
         <section id="services" class="clay-card">
             <h2 class="section-title">My Services</h2>
 
@@ -483,12 +462,10 @@
             </div>
 
             <p style="margin-top: 30px; text-align: center; font-weight: 600;">
-                Other interests: AI Automation, Project Management,
-                and Systems Analysis.
+                Other interests: documentation, writing.
             </p>
         </section>
 
-       
         <section id="contact" class="clay-card">
             <h2 class="section-title">Let's Build Together!</h2>
 
@@ -546,18 +523,63 @@
         <p style="font-size: 0.9rem; opacity: 0.8;">Designed with care.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
     <script>
+      
+        console.log(" Gsap ver ", gsap.version);
+        //tween
+        //gsap.to("h1", { x:200, duration:1 }); 
+        //gsap.from("h1", { y:-60, opacity:0, duration:1 });
+        //gsap.from("h1", {opacity:0,},{opacity:1 , duration:5});
+
+        //easing
+        //gsap.from("h1", {y:-60, opacity:0, duration:1, ease:"bounce.out"});
+        //gsap.from("h2", {y:-60, opacity:0, duration:1, ease:"bounce.out"});
+        //gsap.from("h3", {y:-60, opacity:0, duration:1, ease:"bounce.out"});
+        //gsap.from("h1", {opacity:0,},{opacity:1 , duration:5, ease:"back.out(2.5)"}); 
+
+        //stagger
+        //gsap.from("li", { x:200, opacity: 0, duration: 0.5, ease: "power2.out", stagger: 0.5 });
+
+        //timeline 
+        const tl = gsap.timeline({default:{duration:0.5, ease:"power2.out"}});
+            tl.from("a", { y:-200, duration:1, ease:"power2.out" });
+            tl.from("li", { x:-200, duration:1, ease:"power2.out", stagger:0.5 });
+            tl.from("h1", { x:-200, duration:1, ease:"power2.out", stagger:0.5 });
+            
+           
+    </script>
+
+    <script> 
         const toggleButton = document.querySelector("#toggledark");
         const html = document.documentElement;
 
         toggleButton.addEventListener("click", function () {
+           gsap.fromTo(toggleButton, 
+        { rotation: 0 }, 
+        { rotation: 360, duration: 0.5, ease: "power2.out", clearProps: "rotation" }
+            );
+
             html.classList.toggle("dark");
+        });
+
+        const replayBtn = document.querySelector("#replayBtn");
+
+        replayBtn.addEventListener("click", function () {
+            
+           gsap.fromTo(replayBtn, 
+        { rotation: 0 }, 
+        { rotation: -360, duration: 0.5, ease: "power2.out", clearProps: "rotation" }
+        );
+           
+            tl.restart();
         });
 
         const contactForm = document.querySelector("#contactForm");
 
         contactForm.addEventListener("submit", function (event) {
             event.preventDefault();
+            
 
             
             const btn = contactForm.querySelector('button');
